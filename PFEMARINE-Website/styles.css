@@ -1,0 +1,532 @@
+
+/* ===========================
+   1. Base Styles
+=========================== */
+body {
+    font-family: "georgia", serif;
+    font-size: large;
+    background-color: purple;
+    width: auto;
+    max-width: 1800px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: purple;
+    margin: 0 auto;
+    padding: 10px ;
+}
+
+header {
+    height: fit-content;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+}
+
+/* ===========================
+   2. Layout Containers
+=========================== */
+/* Highlight new workshop section */
+#ai-creation-cell {
+  background-color: #f0f8ff;
+  border-left: 4px solid #0078d4;
+  padding: 1em;
+  font-size: 1rem;
+}
+
+#ai-creation-cell ul {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+  list-style-type: disc;
+}
+
+#ai-creation-cell code {
+  background-color: #e6f7ff;
+  color: #005a9e;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Optional: Add a badge for new offerings */
+.solutions-box::before {
+  content: attr(data-badge);
+  display: inline-block;
+  background-color: #ff9800;
+  color: white;
+  font-size: 0.7em;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.solutions-box[data-badge="New"]::before {
+  background-color: #4caf50;
+}
+
+#CoreValues-GuidingPrinciples-window {
+    display: flex;
+    flex: wrap;
+}
+
+#header-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#our-mission {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    margin: 2.5px auto;
+    text-align: left;
+    padding: 0 30px 10px 30px;
+    width: fit-content;
+}
+
+#core-values, #guiding-principles {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    margin: 2.5px;
+    padding: 10px 30px 10px 30px;
+    text-align: left;
+    flex-basis: 50%;
+}
+
+#welcome-section {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+    text-align: left;
+    color: purple;
+    margin: 10px auto;
+    position: relative;
+    height: auto;
+    max-width: 100%;
+}
+
+#welcome-section h1 {
+    font-size: 60px;
+}
+
+#welcome-section p {
+    padding: px;
+    font-size: 24px;
+}
+#error404 {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+    text-align: left;
+    color: purple;
+    margin: 2.5px auto;
+    width: 50%;
+    position:absolute;
+}
+
+#solutions-container {
+    background-color: lightblue;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#solutions-container h1 {
+    font-size: 36px;
+}
+
+#solutions {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#solutions p {
+    margin: 10px auto;
+    padding: 20px;
+}
+#cloud-migration, #cost-optimization, #disaster-recovery, #hybrid-cloud-solutions, #identity-and-access-management, #infrastructure-as-code, #migration-services, #monitoring-and-management, #on-premise-solutions, #security-and-compliance {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    width: 60px;
+    margin: 5px;
+    padding: 5px;
+    flex-basis: 25%;
+}
+#training-and-education {
+    background-color: lightblue;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    margin: 5px auto;
+    font-size: large;
+    padding: 10px;;
+}
+#training-and-education p {
+    border-width: thick;
+    font-size: 20px;
+    text-align: center;
+}
+#training-and-education table {
+    border-style: solid;
+    border-radius: 10px;
+    background-color: white;
+    margin: 20px auto;
+    padding: 10px;
+    width: fit-content;
+}
+#training-and-education table th:first-child {
+    font-size: 20px;
+    text-align: left;
+}
+#training-and-education table th:nth-child(2) {
+    font-size: 20px;
+    text-align: center;
+}
+#training-and-education table th:last-child {
+    font-size: 20px;
+    text-align: center;
+}
+#training-and-education table td{
+    padding: 5px 10px 5px 10px;
+}
+#training-and-education table td:first-child {
+    font-size: 24px;
+    text-decoration: underline dotted;
+    text-decoration-color: blue;
+    position: relative;
+}
+#training-workshop td {
+    padding: 0 4px 0 4px;
+    position: relative;
+    cursor: pointer;
+}
+#training-workshop td:first-child:hover {
+    border-radius: 10px;
+    border-style: inset;
+}
+#business-lifestyle-cell:hover::before {
+    content: "Learn how to integrate Microsoft 365 products in your business day-to-day. Our Business Lifestyle workshop covers topics such as productivity, collaboration, and communication to help you achieve your business goals. Contact us to learn more.";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translateX(50%);
+    padding: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+    color: purple;
+    z-index: 1;
+    transition-duration: 0s;
+}
+#ad-troubleshoot-cell:hover::before {
+    content: "The Active Directory Troubleshooting: Troubleshoot in 1 Day workshop is expertly designed to provide you with a strategic approach for troubleshooting Active Directory issues, resulting in optimal and effective remediation within a day.";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translateX(50%);
+    padding: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+    color: purple;
+    z-index: 1;
+    transition-duration: 0s;
+}
+#monitoring-management-cell:hover::before {
+    content: "Learn how to monitor and manage your Azure resources with our Azure Modern Monitoring & Management workshop. Our trainers will guide you through the process of setting up Log Analytics and PowerBI to monitor your resources in real-time. Contact us to learn more.";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translateX(50%);
+    padding: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+    color: purple;
+    z-index: 1;
+    transition-duration: 0s;
+}
+#cloud-armor-cell:hover::before {
+    content: "Protect your organization against advanced cyber threats with PFEMARINE Cloud Armor. Our cloud-based security solution uses Microsoft Entra and Defender for Endpoint technologies to provide real-time threat detection and response capabilities. Contact us to learn more about our 6-day workshop.";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translateX(50%);
+    padding: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+    color: purple;
+    z-index: 1;
+    transition-duration: 0s;
+}
+#training-and-education table td:nth-child(2) {
+    font-size: 24px;
+    text-align: center;
+}
+#training-and-education table td:last-child {
+    font-size: 24px;
+    text-align: center;
+}
+#training-and-education p.disclaimer {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 14px;
+}
+#pricing {
+    background-color: lightblue;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: auto;
+    font-size: large;
+    padding: 10px;
+}
+#pricing table {
+    background-color: white;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+}
+#pricing p {
+    border-radius: 10px;
+    margin: 0 auto;
+    font-size: large;
+    text-align: center;
+}
+#pricing td {
+    justify-content: space-evenly;
+    padding: 20px;
+}
+#pricing table th:first-child {
+    font-size: 24px;
+}
+#pricing table th:nth-child(2) {
+    font-size: 24px;
+}
+#pricing table th:last-child {
+    font-size: 24px;
+}
+#pricing table td:first-child {
+    font-size: 24px;
+    text-align: left;
+}
+#pricing table td:nth-child(2) {
+    font-size: 24px;
+}
+#pricing table td:last-child {
+    font-size: 24px;
+}
+#pricing p.disclaimer {
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ===========================
+   3. Components
+=========================== */
+.welcome-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  text-align: center;
+}
+.welcome-header h1 {
+  font-size: 42px;
+  color: purple;
+  margin: 0;
+}
+.welcome-image {
+  width: 240px;
+  height: auto;
+  border-radius: 10px;
+}
+.solutions-box img {
+    border-style: inset;
+    border-radius: 10px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+.image-container {
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    background-color: black;
+    height: 30px;
+    width: 502px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 100px 120px 0;
+    margin: 10px;
+}
+.image-container img {
+    object-fit: contain;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -5px;
+    animation: scroll 2s linear;
+}
+
+/* ===========================
+   4. Navigation
+=========================== */
+#navigation-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navigation-bar {
+    font-family: "Segoe UI", sans-serif;
+    background-color: lightblue;
+    border-style: inset outset outset inset;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 50px auto;
+}
+
+nav td {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ===========================
+   5. Forms & Contact
+=========================== */
+#contact-us {
+    background-color: lightblue;
+    border-style: inset outset outset inset;
+    border-width: thick;
+    border-radius: 10px;
+    width: 70%;
+    margin: 2.5px auto;
+    padding: 10px 50px 40px 50px;
+    color: purple;
+}
+.purple-background {
+    background-color: purple;
+}
+.lightblue-text {
+    color: purple;
+}
+.center-text {
+    text-align: center;
+}
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    padding: 4px;
+}
+.contact-form {
+    border-radius: 10px;
+    background-color: white;
+    flex: 1;
+    margin: auto;
+    padding: 1px;
+}
+.schedule-meeting {
+    border-radius: 10px;
+    background-color: white;
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    height: fit-content;
+}
+.schedule-meeting p {
+    margin: 5px auto;
+}
+.contact-form label, .schedule-meeting label {
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-form input {
+    display: block;
+    margin-bottom: 10px;
+    width: auto;
+}
+.contact-form textarea {
+    display: block;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    width: 600px;
+    height: 100px;
+}
+.contact-form input[type="submit"], .schedule-meeting button {
+    background-color: lightblue;
+    border: double;
+    border-radius: 10px;
+    color: purple;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.contact-form input[type="submit"]:hover, .schedule-meeting button:hover {
+    background-color: purple;
+    color: lightblue;
+}
+/* ===========================
+   6. Animations
+=========================== */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+   }
+    100% {
+        transform: translateX(0);
+   }
+}
