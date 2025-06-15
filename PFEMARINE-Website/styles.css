@@ -12,7 +12,7 @@ body {
     font-size: large;
     background-color: purple;
     width: auto;
-    max-width: 1800px;
+    max-width: 100%;
 }
 .text-body {
   font-size: 1.1rem;
@@ -55,7 +55,7 @@ footer {
     padding: 10px 30px 10px 30px;
     text-align: left;
     color: purple;
-    margin: 10px auto;
+    margin: 10px;
     position: relative;
     height: auto;
     max-width: 100%;
@@ -114,6 +114,17 @@ footer {
     margin: 10px auto;
     padding: 20px;
 }
+.solutions-box {
+  background-color: white;
+  border-style: inset outset outset inset;
+  border-width: thick;
+  border-radius: 10px;
+  margin: 10px;
+  width: 60px;
+  margin: 5px;
+  padding: 5px;
+  flex-basis: 25%;
+}
 .solutions-box img {
     border-style: inset;
     border-radius: 10px;
@@ -149,66 +160,22 @@ footer {
 /* ===========================
    Training & Education
 =========================== */
+/* === Container Box === */
 #training-education-box {
-  background-color: lightblue;
-  border-style: inset outset outset inset;
-  border-width: thick;
-  border-radius: 10px;
-  padding: 2rem 1rem;
+  background-color: #d6efff;
+  border: 3px inset #ccc;
+  border-radius: 12px;
+  padding: 2rem;
   margin: 2rem auto;
-  max-width: relative;
+  max-width: 100%;
 }
-#ai-creation-cell {
-  background-color: #f0f8ff;
-  border-left: 4px solid #0078d4;
-  padding: 1em;
-  border-radius: 8px;
-  font-size: 1.3rem;
-  position: relative;
-}
-#ai-creation-cell ul {
-  margin: 0.5em 0;
-  padding-left: 1.2em;
-  list-style-type: disc;
-}
-#ai-creation-cell code {
-  background-color: #e6f7ff;
-  color: #005a9e;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-weight: bold;
-}
-#ai-creation-cell:hover::before {
-    content: "Build intelligent automation, machine learning workflows, and GPT-like models to integrate into your existing workflows. This workshop equips you to lead modern AI transformation in business and operations.";
-    position: absolute;
-    top: 100%;
-    left: 25%;
-    transform: translateX(50%);
-    padding: 20px;
-    background-color: lightblue;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: justify;
-    color: purple;
-    z-index: 1;
-    transition-duration: 0s;
-}
-#business-lifestyle-card:hover::after {
-  content: "Covers Microsoft 365 productivity, communication, and collaboration in real-world business workflows.";
-}
-#ad-troubleshoot-card:hover::after {
-  content: "1-day strategic remediation workshop for diagnosing Active Directory issues.";
-}
-#monitoring-card:hover::after {
-  content: "Train your team on Log Analytics and Power BI for real-time Azure infrastructure insights.";
-}
-#cloud-armor-card:hover::after {
-  content: "Deploy advanced threat protection using Entra ID and Defender for Endpoint in a guided 6-day engagement.";
-}
-#ai-creation-card:hover::after {
-  content: "Build GPT-powered automation, train ML models, and integrate AI into business processes.";
+
+/* === Workshop Cards === */
+.workshop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 .workshop-card {
   background-color: white;
@@ -222,16 +189,11 @@ footer {
   position: relative;
   color: purple;
 }
-.workshop-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
+/* === Format Rows in Card === */
 .workshop-format-row {
   display: flex;
   justify-content: space-between;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border-top: 1px dashed #ccc;
   padding: 0.4rem 0;
 }
@@ -245,16 +207,18 @@ footer {
 .workshop-format-row .price,
 .workshop-format-row .duration {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
+/* === Hover Tooltips via Data Attribute === */
 .workshop-card:hover::after {
+  content: attr(data-description);
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: lightblue;
+  background-color: #e0f7fa;
   color: purple;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   border: 2px solid black;
   border-radius: 10px;
@@ -262,6 +226,32 @@ footer {
   width: 95%;
   z-index: 1000;
   margin-top: 1rem;
+  text-align: justify;
+}
+/* === Discount Table Styling === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+thead {
+  background-color: purple;
+  color: white;
+}
+table th, table td {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+table th {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 /* ======================
    PRICING TIERS STYLE
@@ -643,6 +633,113 @@ nav td {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+/* ===========================
+     DISCOUNT FORM STYLE 
+ =========================== */
+#discount-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+#discount-form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: purple;
+}
+
+#discount-form input[type="text"],
+#discount-form input[type="url"],
+#discount-form input[type="file"],
+#discount-form input[type="email"],
+#discount-form input[type="tel"],
+#discount-form select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#discount-form input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 0.5rem;
+}
+
+#estimatedDiscount {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #512da8;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#discount-form .button-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px double #512da8;
+  background-color: #e0e7ff;
+  color: #512da8;
+  transition: all 0.3s ease;
+}
+
+#discount-form .button-cta:hover {
+  background-color: #512da8;
+  color: white;
+}
+/* ===========================
+   COUNTRY CODE and PHONE NUMBER INPUT
+=========================== */
+.phone-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.phone-input-group select,
+.phone-input-group input[type="tel"] {
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.phone-input-group select {
+  flex: 0 0 120px;
+}
+
+.phone-input-group input[type="tel"] {
+  flex: 1;
+}
+/* ===========================
+    DISCLAIMER
+=========================== */
+.Disclaimer {
+  background-color: white;
+  border-left: 5px solid purple;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+  border-radius: 10px;
+  line-height: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.Disclaimer strong {
+  color: black;
+  font-weight: bold;
 }
 /* ===========================
    Animations
