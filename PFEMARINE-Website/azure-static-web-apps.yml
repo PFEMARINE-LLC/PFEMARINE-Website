@@ -22,4 +22,4 @@ jobs:
           action: "upload"
           # Adjust these as needed
           app_location: "/"            # Root directory
-          output_location: ""          # Output (static files already in root; set to 'dist' or 'build' if applicable)
+          output_location: "/"          # Output (static files already in root; set to 'dist' or 'build' if applicable)
