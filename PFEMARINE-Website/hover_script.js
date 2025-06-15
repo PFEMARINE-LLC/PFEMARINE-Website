@@ -3,18 +3,16 @@
 const solutionsBoxes = document.querySelectorAll('.solutions-box');
 
 solutionsBoxes.forEach(box => {
-    box.addEventListener('mouse-enter', () => {
+    box.addEventListener('mouseenter', () => {
         solutionsBoxes.forEach(otherBox => {
         if (otherBox !== box) {
                     otherBox.classList.remove('expanded');
                     }
-                }
-            );
+                });
         box.classList.add('expanded');
-        }
-    );
+        });
 
-    box.addEventListener('mouse-leave', () => {
+    box.addEventListener('mouseleave', () => {
         box.classList.remove('expanded');
         });
     }

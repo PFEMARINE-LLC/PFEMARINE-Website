@@ -1,52 +1,55 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-    <title>PFEMARINE LLC</title>
-    <link href="styles.css" rel="stylesheet"/>
-    <link href="header.html" rel="import">
-</head>
-
-<body>
-<header id="header">
-</header>
-
-
-<section id="mission-window">
-    <div id="our-mission">
-        <h2>Our Mission Statement</h2>
-        <p>At PFEMARINE LLC, we are committed to empowering startups, small businesses, and mid-level enterprises
-            with exceptional IT consulting and services that drive digital transformation. Our approach is guided
-            by the principles of Inclusivity, Diversity, and Growth-Mindset, and reinforced by our core values of
-            Integrity, Equity, and Respect.
-        </p>
-        <p> We believe that digital transformation is essential for businesses to succeed in today's rapidly
+ <head>
+  <title>
+   PFEMARINE LLC
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header id="header">
+  </header>
+  <section id="mission-window">
+   <div class="content-box text-purple text-body">
+    <h2>
+     Our Mission Statement
+    </h2>
+    <p font-family: "Segoe UI", sans-serif;>
+     At PFEMARINE LLC, we are committed to empowering startups, small businesses, and most importantly <strong>non-profits</strong>
+            with exceptional IT consulting and services that drive digital transformation. 
+            <br>Our approach is guided by the principles of Inclusivity, Diversity, and Growth-Mindset, and
+            reinforced by our core values of Integrity, Equity, and Respect.
+    </p>
+    <p font-family: "Segoe UI", sans-serif;>
+     We believe that digital transformation is essential for businesses to succeed in today's rapidly
             evolving landscape. By fostering a culture of inclusivity and diversity, we enable our clients to
-            harness the power of technology to achieve their goals.
-        </p>
-        <p> At PFEMARINE LLC, we pride ourselves on building strong and lasting relationships with our clients, and
-            we believe that our integrity-driven approach is the key to our success. We are dedicated to providing
-            honest and transparent communication, ensuring that our solutions are tailored to meet our clients'
-            unique needs.
-        </p>
-        <p> With a passion for technology and a growth-mindset, we are committed to delivering reliable and
-            innovative solutions that drive our clients' growth and success in the digital age. Let us be your
-            partner on the path to digital transformation and success.
-        </p>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2023 PFEMARINE LLC. All rights reserved.</p>
-</footer>
-
-<script>
-fetch('header.html')
+            harness the power of technology to achieve their goals. 
+    </p>
+    <p font-family: "Segoe UI", sans-serif;>
+     At PFEMARINE LLC, we pride ourselves on building strong and lasting relationships with our clients, and
+            we believe that our integrity-driven approach is the key to our success. 
+            <br>We are dedicated to providing honest and transparent communication, ensuring that our solutions 
+            are tailored to meet our clients' unique needs.
+    </p>
+    <p font-family: "Segoe UI", sans-serif;>
+     With a passion for technology and a growth-mindset, we are committed to delivering reliable and
+            innovative solutions that drive our clients' growth and success in the digital age. 
+            <br><strong>Let us be your partner on the path to digital transformation and success.</strong>
+    </p>
+   </div>
+  </section>
+  <footer>
+   <p>
+    © 2023 PFEMARINE LLC. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   fetch('header.html')
     .then(response => response.text())
     .then(html => {
         const header = document.getElementById('header');
         header.innerHTML = html;
     });
-</script>
-</body>
+  </script>
+ </body>
 </html>

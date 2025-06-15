@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>PFEMARINE LLC</title>
-    <link href="styles.css" rel="stylesheet"/>
-    <link href="header.html" rel="import">
-</head>
-
-<body>
-<header id="header">
-</header>
-
-<main>
-    <section id="welcome-section">
-        <div class="welcome-header">
-          <h1>Welcome to</h1>
-          <img src="PFEMARINE-First Photo.png" alt="PFEMARINE First Photo" class="welcome-image">
-        </div>
-        <p>We are a team of experienced professionals who specialize in digitally transforming businesses through
-            innovative and tailored Cloud solutions. Our goal is to provide exceptional IT consulting and services to startups, small businesses, and mid-level
-            enterprises, empowering them to achieve their digital transformation goals.</p>
-        <h2>Why PFEMARINE?</h2>
-        <ul>
-            <li><strong>Expertise:</strong> Azure Cloud, hybrid, and on-premise solutions</li>
-            <li><strong>Custom Approach:</strong> Tailored strategies for startups to mid-sized enterprises</li>
-            <li><strong>Inclusive Culture:</strong> Diversity and collaboration at our core</li>
-        </ul>
-        <p>Ready to transform your business? <a href="contact.html">Let’s talk.</a></p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2023 PFEMARINE LLC. All rights reserved.</p>
-</footer>
-
-<script>
-fetch('header.html')
+ <head>
+  <title>
+   PFEMARINE LLC
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="header.html" rel="import"/>
+ </head>
+ <body>
+  <header id="header">
+  </header>
+  <main>
+   <div class="content-box text-purple text-body">
+    <div class="welcome-header">
+     <h1>
+      Welcome to
+     </h1>
+     <img alt="PFEMARINE Logo" class="welcome-image" src="PFEMARINE-Logo.png"/>
+    </div>
+    <p>
+    We are experienced professionals who specialize in digitally transforming businesses through innovative and tailored Cloud solutions.
+    Our goal is to provide exceptional IT consulting and IT services to <strong>Startups</strong>, <strong>Small businesses</strong>, and 
+    <strong>NON-Profit Organizations</strong>, empowering them to achieve their digital transformation goals.
+    </p>
+    <h2>
+     Why PFEMARINE?
+    </h2>
+    <ul>
+     <li><strong>Expertise:</strong> Azure Cloud, hybrid, and on-premise solutions</li>
+     <li><strong>Custom Approach:</strong> Tailored strategies for startups to mid-sized enterprises</li>
+     <li><strong>Inclusive Culture:</strong> Diversity and collaboration at our core</li>
+     <li><strong>Non-Profit Solutions:</strong> Impact-focused support for non-profit organizations</li>
+    </ul>
+    <p>
+     Ready to transform your business?
+     <a href="contact.html">
+      Let’s talk.
+     </a>
+    </p>
+   </div>
+  </main>
+  <footer>
+   <p>
+    © 2023 PFEMARINE LLC. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   fetch('header.html')
     .then(response => response.text())
     .then(html => {
         const header = document.getElementById('header');
         header.innerHTML = html;
     });
-
-</script>
-</body>
+  </script>
+ </body>
 </html>
