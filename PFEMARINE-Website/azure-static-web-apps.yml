@@ -20,6 +20,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations
           action: "upload"
-          #### Adjust these as needed
+          # Adjust these as needed
           app_location: "/"            # Root directory
-          output_location: "/"         # Output (static files already in root)
+          output_location: ""          # Output (static files already in root; set to 'dist' or 'build' if applicable)
