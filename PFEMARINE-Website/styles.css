@@ -342,16 +342,6 @@ table tr:nth-child(even) {
 /* ===========================
    Unclassified Rules
 =========================== */
-#cloud-migration, #cost-optimization, #disaster-recovery, #hybrid-cloud-solutions, #identity-and-access-management, #infrastructure-as-code, #migration-services, #monitoring-and-management, #on-premise-solutions, #security-and-compliance {
-    background-color: white;
-    border-style: inset outset outset inset;
-    border-width: thick;
-    border-radius: 10px;
-    width: 60px;
-    margin: 5px;
-    padding: 5px;
-    flex-basis: 25%;
-}
 .image-container {
     border-style: inset outset outset inset;
     border-width: thick;
