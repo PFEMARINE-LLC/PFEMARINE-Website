@@ -639,6 +639,7 @@ nav td {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
+  box-sizing: border-box;
 }
 .flex-row {
   display: flex;
