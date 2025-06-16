@@ -333,8 +333,9 @@ table tr:nth-child(even) {
   padding: 20px 30px;
   margin: 10px auto;
   text-align: left;
+  max-width: 100%;
   width: 100%;
-  max-width: 1200px;
+  box-sizing: border-box;
 }
 /* ===========================
    404 Page
