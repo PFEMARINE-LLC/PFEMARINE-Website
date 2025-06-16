@@ -13,9 +13,6 @@ html, body {
     background-color: purple;
     width: auto;
     max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
 .text-body {
   font-size: 1.1rem;
