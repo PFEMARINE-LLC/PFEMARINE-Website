@@ -523,7 +523,7 @@ table tr:nth-child(even) {
 nav td {
     background-color: white;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 /* ===========================
    Contact Section
