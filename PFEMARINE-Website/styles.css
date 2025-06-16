@@ -169,7 +169,8 @@ footer {
   padding: 2rem;
   margin: 2rem auto;
   max-width: 100%;
-  width: 100%;
+  width: 1200px;
+  box-sizing: border-box;
 }
 
 /* === Workshop Cards === */
