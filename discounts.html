@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Eligibility – PFEMARINE LLC</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="header.html" rel="import" />
+</head>
+
+<body>
+  <header id="header">
+  </header>
+    <section id="discount-form-section" class="section-wrapper">
+        <div class="content-box text-body text-purple">
+            <h1 class="heading-lg">Discount Eligibility Check</h1>
+            <p class="text-subtle">PFEMARINE offers up to <strong>40% off</strong> on workshops and consulting services
+                for
+                eligible organizations. Complete this form to estimate your discount instantly.</p>
+
+            <form id="discount-form">
+                <label for="contactName">Company's Point of Contact</label>
+                <input type="text" id="contactName" name="contactName" required placeholder="Please Enter Company Representative's Name"/>
+
+                <label for="contactPhone">Contact Phone</label>
+                <div class="phone-input-group">
+                    <select id="countryCode" name="countryCode" required>
+                        <option value="" disabled>Select Country Code</option>
+                        <option value="+1" selected>USA (+1)</option>
+                        <option value="+1">CA (+1)</option>
+                        <option value="+52">MX (+52)</option>
+                        <option value="+91">IN (+91)</option>
+                        <option value="+61">AU (+61)</option>
+                        <option value="+81">JP (+81)</option>
+                        <option value="+49">DE (+49)</option>
+                        <option value="+33">FR (+33)</option>
+                        <option value="+86">CN (+86)</option>
+                        <option value="+55">BR (+55)</option>
+                        <option value="+7">RU (+7)</option>
+                    </select>
+                    <input type="tel" id="contactPhone" name="contactPhone" required placeholder="(123) 456-7890" />
+                </div>
+
+                <label for="contactEmail" required>Contact Email</label>
+                <input type="email" id="contactEmail" name="contactEmail" required placeholder="username@domain.extension(.com, .io, .org)"/>
+
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" name="companyName" required placeholder="Your Company Name"/>
+
+                <label for="employeeCount">Employee Count</label>
+                <select id="employeeCount" name="employeeCount" required>
+                    <option value="">Select...</option>
+                    <option value="<10">1–10</option>
+                    <option value="11-50">11–50</option>
+                    <option value="51-99">51–99</option>
+                    <option value="100+">100+</option>
+                </select>
+
+                <label for="revenue">Annual Revenue</label>
+                <select id="revenue" name="revenue" required>
+                    <option value="">Select...</option>
+                    <option value="<250K">Less than $250K</option>
+                    <option value="$250K-1M">$250K – $1M</option>
+                    <option value="$1M-10M">$1M – $10M</option>
+                    <option value=">10M">Over $10M</option>
+                </select>
+
+                <label for="linkedIn">LinkedIn or Glassdoor URL (optional)</label>
+                <input type="url" id="linkedIn" name="linkedIn" placeholder=""/>
+
+                <label>
+                    <input type="checkbox" id="isNonProfit" name="isNonProfit" />
+                    This organization is a verified Non-Profit
+                </label>
+
+                <div id="nonProfitProof" style="display:none">
+                    <label for="nonProfitDoc">Upload Non-Profit Certification (PDF/JPG)</label>
+                    <input type="file" id="nonProfitDoc" name="nonProfitDoc" accept=".pdf,.jpg,.jpeg,.png" />
+                </div>
+
+                <p><strong>Estimated Discount:</strong> <span id="estimatedDiscount">—</span></p>
+
+                <button type="submit" class="button-cta">Submit Request</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        const phoneInput = document.getElementById('contactPhone');
+
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, ''); // Remove all non-digits
+
+            if (value.length > 0) {
+                value = '(' + value;
+            }
+            if (value.length > 4) {
+                value = value.slice(0, 4) + ') ' + value.slice(4);
+            }
+            if (value.length > 9) {
+                value = value.slice(0, 9) + '-' + value.slice(9);
+            }
+
+            // Limit to (XXX) XXX-XXXX
+            e.target.value = value.slice(0, 14);
+        });
+    </script>
+    <script>
+        const form = document.getElementById('discount-form');
+        const employeeCount = document.getElementById('employeeCount');
+        const revenue = document.getElementById('revenue');
+        const isNonProfit = document.getElementById('isNonProfit');
+        const estimatedDiscount = document.getElementById('estimatedDiscount');
+        const nonProfitProof = document.getElementById('nonProfitProof');
+
+        isNonProfit.addEventListener('change', () => {
+            nonProfitProof.style.display = isNonProfit.checked ? 'block' : 'none';
+            updateDiscount();
+        });
+
+        form.addEventListener('change', updateDiscount);
+
+        function updateDiscount() {
+            if (isNonProfit.checked) {
+                estimatedDiscount.textContent = '35% – 40%';
+                return;
+            }
+
+            const emp = employeeCount.value;
+            const rev = revenue.value;
+
+            if (emp === '100+' || rev === '>10M') {
+                estimatedDiscount.textContent = '5% – 15%';
+            } else if ((emp === '11-50' || emp === '51-99') && rev !== '>10M') {
+                estimatedDiscount.textContent = '20% – 30%';
+            } else if (emp === '<10' && rev === '<250K') {
+                estimatedDiscount.textContent = '25% – 30%';
+            } else {
+                estimatedDiscount.textContent = '—';
+            }
+        }
+    </script>
+    <script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => {
+            const header = document.getElementById('header');
+            header.innerHTML = html;
+        });
+    </script>
+
+</body>
+
+</html>
