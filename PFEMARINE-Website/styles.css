@@ -325,6 +325,17 @@ table tr:nth-child(even) {
     width: 100%;
     box-sizing: border-box;
 }
+.content-box {
+  background-color: white;
+  border-style: inset outset outset inset;
+  border-width: thick;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 10px auto;
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+}
 /* ===========================
    404 Page
 =========================== */
@@ -397,17 +408,7 @@ table tr:nth-child(even) {
 .center-text {
     text-align: center;
 }
-.content-box {
-  background-color: white;
-  border-style: inset outset outset inset;
-  border-width: thick;
-  border-radius: 10px;
-  padding: 20px 30px;
-  margin: 10px auto;
-  text-align: left;
-  width: max-content;
-  max-width: 100%;
-}
+
 .navbar {
   background-color: lightblue;
   border-style: inset outset outset inset;
