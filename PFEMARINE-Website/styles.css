@@ -321,7 +321,8 @@ table tr:nth-child(even) {
     margin: 2.5px auto;
     text-align: left;
     padding: 0 30px 10px 30px;
-    width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
 }
 /* ===========================
    404 Page
