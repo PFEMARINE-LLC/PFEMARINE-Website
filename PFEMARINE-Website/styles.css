@@ -293,21 +293,171 @@ table tr:nth-child(even) {
   line-height: 1.5;
 }
 /* ===========================
-   About Us Section
+   ABOUT – EDITORIAL LAYOUT
 =========================== */
-#CoreValues-GuidingPrinciples-window {
-    display: flex;
-    flex: wrap;
+
+#about-hero .content-box,
+#about-story .content-box,
+#about-markets .content-box,
+#about-past-work .content-box,
+#about-scheduler .content-box {
+  width: 100%;
+  max-width: 1200px;
 }
-#core-values, #guiding-principles {
-    background-color: white;
-    border-style: inset outset outset inset;
-    border-width: thick;
-    border-radius: 10px;
-    margin: 2.5px;
-    padding: 10px 30px 10px 30px;
-    text-align: left;
-    flex-basis: 50%;
+
+/* Hero layout: text + sidebar */
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-hero-text {
+  flex: 2 1 340px;
+}
+
+.about-hero-sidebar {
+  flex: 1 1 260px;
+}
+
+/* Headshots / media */
+.about-media-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-headshot {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.about-headshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-headshot figcaption {
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+/* Stat cards */
+.about-stat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-card {
+  background-color: #f5f2ff;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d2c8ff;
+}
+
+.stat-number {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.95rem;
+}
+
+/* Editorial body – column / poetry style */
+.editorial-layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.editorial-body p {
+  max-width: 65ch;
+  margin: 0 0 1.2rem 0;
+}
+
+/* Multi-column on larger screens */
+@media (min-width: 900px) {
+  .editorial-body {
+    column-count: 2;
+    column-gap: 3rem;
+  }
+
+  .editorial-body p {
+    break-inside: avoid;
+  }
+}
+
+/* Markets grid */
+.about-markets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.market-card {
+  flex: 1 1 260px;
+  background-color: #f9f9ff;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.market-card h3 {
+  font-size: 1.3rem;
+  text-align: left;
+  color: purple;
+  margin-bottom: 0.5rem;
+}
+
+/* Past work / analytics */
+.about-pastwork-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.pastwork-card {
+  flex: 1 1 260px;
+  background-color: #f9f9ff;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.pastwork-card h3 {
+  font-size: 1.3rem;
+  text-align: left;
+  color: purple;
+  margin-bottom: 0.5rem;
+}
+
+.about-analytics-media {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.about-analytics-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Scheduler card */
+.about-scheduler-card {
+  max-width: 900px;
+  margin: 0 auto;
 }
 /* ===========================
    Mission Section
